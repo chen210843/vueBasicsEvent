@@ -1,26 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<header>
+  <h1>ข้อมูลส่วนตัว</h1> 
+  
+  </header>
+  <FormComponent @save="insertpersonal"/>
+  <section  class="personal-content" v-if="personals.length>0">
+    <h2>ข้อมูล</h2>
+    <ListData :personals="personals"/>
+    <button>แก้ไขข้อมูล</button>
+  </section>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import FormComponent from './components/FormComponent.vue';
+import ListData from "./components/ListData.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    ListData,
+    FormComponent,
+ 
+  },
+  data(){
+    return{
+      personals:[]
+    }
+  },
+  methods:{
+    insertpersonal(data){
+      this.personals.push(data);
+    }
   }
-}
+  
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+*{
+  box-sizing: border-box;
+}
+header{
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.personal-content{
+  box-shadow: 0 2px 8ox rgba(0,0,0, 0.26);
+  margin: 3rem;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+h1{
+  color: black;
 }
 </style>
