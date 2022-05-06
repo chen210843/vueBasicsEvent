@@ -1,18 +1,5 @@
 <template>
-  <ul>
-    <!-- <Person
-      v-for="(item, index) in personals"
-      :key="index"
-      :id="index"
-      :name="item.name"
-      :level="item.level"
-      :major="item.major"
-      :hobby="item.hobby"
-      :gender="item.gender"
-      @delete="remove"
-      @edit="update"
-    /> -->
-    
+  <ul> 
     <div v-for="(item, index) in personals"
       :key="index"
       :id="index"
@@ -40,12 +27,11 @@
 </template>
 
 <script>
-// import Person from "./Person.vue";
+
 
 export default {
   name: "ListData",
   components: {
-    // Person,
   },
   props: ["personals"],
   methods: {
