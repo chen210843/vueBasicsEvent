@@ -3,8 +3,8 @@
         <img src="https://cdn-icons-png.flaticon.com/128/4521/4521022.png">
         <hr>
         <slot name="card-header"></slot>
+        <slot name="card-content"></slot>
         <slot name="card-button"></slot>
-       <slot name="card-content"></slot>
     </li>
 
 </template>
