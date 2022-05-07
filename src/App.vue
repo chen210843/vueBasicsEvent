@@ -2,7 +2,8 @@
   <header>
     <h1>ข้อมูลส่วนตัว</h1>
   </header>
-  <FormComponent @save="insertpersonal" />
+  <FormComponent @save="insertpersonal" 
+  :personals="personals"/>
   <section class="personal-content" v-if="personals.length > 0">
     <h3>ข้อมูล</h3>
     <ListData
@@ -30,15 +31,11 @@ export default {
     };
   },
   methods: {
-    insertpersonal(data) {
-      this.personals.push(data);
-      // this.newpersonal.push(data);
+    insertpersonal(index) {
+      this.personals.push(index);
     },
     updatepersonal(index){
-      this.personals[index]
-      console.log(this.personals[index])
-      this.personals = this.personals[index]
-       
+      this.personal = this.personals.replace(index)
     },
     deletedata(index) {
       this.personals.splice(this.personals.indexOf(index), 1);

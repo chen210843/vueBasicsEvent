@@ -37,6 +37,7 @@
     <div>
       <button>บันทึกข้อมูล</button>
     </div>
+    {{personals}}
   </form>
 </template>
 
@@ -45,6 +46,7 @@ export default {
   name: "FormComponent",
   data() {
     return {
+      prop:["personals"],
       personal: {
         name: "",
         level: "1",
@@ -74,6 +76,7 @@ export default {
       this.personal.hobby = "อ่านหนังสือ";
       this.personal.gender = "";
     },
+
 }
 };
 </script>
